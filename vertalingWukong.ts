@@ -47,10 +47,10 @@ namespace wuKong {
     * ServoTypeList
     */
     export enum ServoTypeList {
-        //% block="180°" 
-        _180,
         //% block="270°"
         _270,
+        //% block="180°"
+        _180,
         //% block="360°" 
         _360
     }
@@ -120,7 +120,7 @@ namespace wuKong {
      * @param speed motor speed, eg: 100
      */
     //% weight=88
-    //% blockId=setMotorSpeed block="Laat dc-motor %motor draaien op snelheid %speed"
+    //% blockId=setMotorSpeed block="Laat dc-motor %motor draaien met snelheid %speed"
     //% speed.min=-100 speed.max=100
     export function setMotorSpeed(motor: MotorList, speed: number): void {
         let buf = pins.createBuffer(4);
@@ -157,7 +157,7 @@ namespace wuKong {
      * @param m2speed M2 motor speed, eg: -100
      */
     //% weight=87
-    //% blockId=setAllMotor block="set motor M1 speed %m1speed M2 speed %m2speed"
+    //% blockId=setAllMotor block="dc-motor M1 snelheid %m1speed dc-motor M2 snelheid %m2speed"
     //% m1speed.min=-100 m1speed.max=100
     //% m2speed.min=-100 m2speed.max=100
     export function setAllMotor(m1speed: number, m2speed: number): void {
@@ -170,7 +170,7 @@ namespace wuKong {
      * @param motor A motor in the MotorList , eg: MotorList.M1
      */
     //% weight=86
-    //% blockId=stopMotor block="Stop motor %motor"
+    //% blockId=stopMotor block="Laat motor %motor stoppen"
     export function stopMotor(motor: MotorList): void {
         setMotorSpeed(motor, 0)
     }
@@ -178,7 +178,7 @@ namespace wuKong {
      * TODO: Stop all motors, including M1 and M2.
      */
     //% weight=85
-    //% blockId=stopAllMotor  block="Laat de dc-motors stoppen"
+    //% blockId=stopAllMotor  block="Laat beide dc-motors stoppen"
     export function stopAllMotor(): void {
         setMotorSpeed(MotorList.M1, 0)
         setMotorSpeed(MotorList.M2, 0)
