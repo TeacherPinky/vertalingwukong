@@ -157,7 +157,7 @@ namespace wuKong {
      * @param m2speed M2 motor speed, eg: -100
      */
     //% weight=87
-    //% blockId=setAllMotor block="dc-motor M1 snelheid %m1speed dc-motor M2 snelheid %m2speed"
+    //% blockId=setAllMotor block="Dc-motor M1 snelheid %m1speed dc-motor M2 snelheid %m2speed"
     //% m1speed.min=-100 m1speed.max=100
     //% m2speed.min=-100 m2speed.max=100
     export function setAllMotor(m1speed: number, m2speed: number): void {
