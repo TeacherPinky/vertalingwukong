@@ -178,7 +178,7 @@ namespace wuKong {
      * TODO: Stop all motors, including M1 and M2.
      */
     //% weight=85
-    //% blockId=stopAllMotor  block="Laat beide dc-motors stoppen"
+    //% blockId=stopAllMotor block="Laat beide dc-motors stoppen"
     export function stopAllMotor(): void {
         setMotorSpeed(MotorList.M1, 0)
         setMotorSpeed(MotorList.M2, 0)
