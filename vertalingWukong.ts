@@ -60,7 +60,7 @@ namespace wuKong {
      * TODO: Set the on-board LED display mode. 
      * @param mode breath or off , eg: LightMode.BREATH
      */
-    //% weight=90
+    //% weight=75
     //% blockId="setLightMode" block="Stel wit licht in op %mode"
     //% group="Lampjes"
     export function setLightMode(mode: LightMode): void {
@@ -99,7 +99,7 @@ namespace wuKong {
     * TODO: Set the brightness of on-board LED lamp.
     * @param light brightness, eg: 100
     */
-    //% weight=89
+    //% weight=70
     //% blockId=lightIntensity block="Stel lichtintensiteit in op %light"
     //% light.min=0 light.max=100
     //% group="Lampjes"
@@ -122,7 +122,7 @@ namespace wuKong {
      * @param motor M1 or M2 motor , eg: MotorList.M1
      * @param speed motor speed, eg: 100
      */
-    //% weight=88
+    //% weight=65
     //% blockId=setMotorSpeed block="Laat dc-motor %motor draaien met snelheid %speed"
     //% speed.min=-100 speed.max=100
     //% group="Rode en gele dc-motor"
@@ -160,7 +160,7 @@ namespace wuKong {
      * @param m1speed M1 motor speed , eg: 100
      * @param m2speed M2 motor speed, eg: -100
      */
-    //% weight=87
+    //% weight=64
     //% blockId=setAllMotor block="Dc-motor M1 snelheid %m1speed dc-motor M2 snelheid %m2speed"
     //% m1speed.min=-100 m1speed.max=100
     //% m2speed.min=-100 m2speed.max=100
@@ -174,7 +174,7 @@ namespace wuKong {
      * TODO: Stop one of the motors. 
      * @param motor A motor in the MotorList , eg: MotorList.M1
      */
-    //% weight=86
+    //% weight=63
     //% blockId=stopMotor block="Laat motor %motor stoppen"
     //% group="Rode en gele dc-motor"
     export function stopMotor(motor: MotorList): void {
@@ -183,7 +183,7 @@ namespace wuKong {
     /*
      * TODO: Stop all motors, including M1 and M2.
      */
-    //% weight=85
+    //% weight=62
     //% blockId=stopAllMotor block="Laat beide dc-motors stoppen"
     //% group="Rode en gele dc-motor"
     export function stopAllMotor(): void {
