@@ -65,7 +65,7 @@ namespace wuKong {
      */
     //% weight=100
     //% blockId=setServoAngle block="Zet %servoType servo %servo op hoek van %angle graden"
-    //% hoek.min=0 hoek.max=270
+    //% angle.min=0 angle.max=270
     //% group="Groene en grijze servomotor"
     export function setServoAngle(servoType: ServoTypeList, servo: ServoList, angle: number): void {
         let buf = pins.createBuffer(4);
