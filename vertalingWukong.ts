@@ -2,6 +2,7 @@
 * Functions to WuKong multifunctional expansion board by ELECFREAKS Co.,Ltd.
 */
 //% color=#ff7f24  icon="\uf0c2" block="wuKong" blockId="wuKong"
+//% groups=['Groene en grijze servomotor', 'Lampjes', 'Rode en gele dc-motor']
 namespace wuKong {
     const board_address = 0x10
     /**
@@ -61,6 +62,7 @@ namespace wuKong {
      */
     //% weight=90
     //% blockId="setLightMode" block="Stel wit licht in op %mode"
+    //% group="Lampjes"
     export function setLightMode(mode: LightMode): void {
         let buff = pins.createBuffer(4);
         switch (mode) {
@@ -100,6 +102,7 @@ namespace wuKong {
     //% weight=89
     //% blockId=lightIntensity block="Stel lichtintensiteit in op %light"
     //% light.min=0 light.max=100
+    //% group="Lampjes"
     export function lightIntensity(light: number): void {
         let buff = pins.createBuffer(4);
         buff[0] = 0x12;
@@ -122,6 +125,7 @@ namespace wuKong {
     //% weight=88
     //% blockId=setMotorSpeed block="Laat dc-motor %motor draaien met snelheid %speed"
     //% speed.min=-100 speed.max=100
+    //% group="Rode en gele dc-motor"
     export function setMotorSpeed(motor: MotorList, speed: number): void {
         let buf = pins.createBuffer(4);
         switch (motor) {
@@ -160,6 +164,7 @@ namespace wuKong {
     //% blockId=setAllMotor block="Dc-motor M1 snelheid %m1speed dc-motor M2 snelheid %m2speed"
     //% m1speed.min=-100 m1speed.max=100
     //% m2speed.min=-100 m2speed.max=100
+    //% group="Rode en gele dc-motor"
     export function setAllMotor(m1speed: number, m2speed: number): void {
         setMotorSpeed(MotorList.M1, m1speed)
         setMotorSpeed(MotorList.M2, m2speed)
@@ -171,6 +176,7 @@ namespace wuKong {
      */
     //% weight=86
     //% blockId=stopMotor block="Laat motor %motor stoppen"
+    //% group="Rode en gele dc-motor"
     export function stopMotor(motor: MotorList): void {
         setMotorSpeed(motor, 0)
     }
@@ -179,6 +185,7 @@ namespace wuKong {
      */
     //% weight=85
     //% blockId=stopAllMotor block="Laat beide dc-motors stoppen"
+    //% group="Rode en gele dc-motor"
     export function stopAllMotor(): void {
         setMotorSpeed(MotorList.M1, 0)
         setMotorSpeed(MotorList.M2, 0)
@@ -192,6 +199,7 @@ namespace wuKong {
     //% weight=100
     //% blockId=setServoAngle block="Zet %servoType servo %servo op hoek van %angle graden"
     //% angle.min=0 angle.max=360
+    //% group="Groene en grijze servomotor"
     export function setServoAngle(servoType: ServoTypeList, servo: ServoList, angle: number): void {
         let buf = pins.createBuffer(4);
         if (servo == 0) {
@@ -643,6 +651,7 @@ namespace wuKong {
     //% weight=95
     //% blockId=setServoSpeed block="Laat servomotor %servo draaien met snelheid %speed\\%"
     //% speed.min=-100 speed.max=100
+    //% group="Groene en grijze servomotor"
     export function setServoSpeed(servo: ServoList, speed: number): void {
         speed = Math.map(speed, -100, 100, 0, 180)
         setServoAngle(ServoTypeList._180, servo, speed)
